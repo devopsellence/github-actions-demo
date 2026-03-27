@@ -11,9 +11,16 @@ function App() {
         </a>{' '}
         GitHub Action.
       </p>
-      <p>
-        Just push to main and your Docker image gets built, pushed, and deployed automatically.
-      </p>
+      <ul>
+        <li>Push to main and it deploys automatically</li>
+        <li>Get a public domain with HTTPS</li>
+        <li>
+          Uses{' '}
+          <a href="https://github.com/devopsellence/deploy-action" target="_blank" rel="noopener noreferrer">
+            devopsellence/deploy-action
+          </a>
+        </li>
+      </ul>
       <code>
         uses: devopsellence/deploy-action@v1
       </code>

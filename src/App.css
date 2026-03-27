@@ -22,9 +22,18 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-p {
+p, ul {
   line-height: 1.6;
   color: #333;
+}
+
+ul {
+  text-align: left;
+  display: inline-block;
+}
+
+li {
+  margin: 0.5rem 0;
 }
 
 a {
