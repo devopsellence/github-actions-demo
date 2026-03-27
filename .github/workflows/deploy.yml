@@ -1,0 +1,16 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: devopsellence/deploy-action@v1
+        with:
+          # Get your token at: https://www.devopsellence.com/setup/github-actions
+          token: ${{ secrets.DEVOPSELLENCE_TOKEN }}
+          project: github-actions-demo
