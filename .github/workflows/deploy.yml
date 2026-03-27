@@ -1,5 +1,3 @@
-name: Deploy
-
 on:
   push:
     branches: [main]
@@ -7,10 +5,14 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      DEVOPSELLENCE_ENV_VARS: ${{ vars.DEVOPSELLENCE_ENV_VARS }}
+      DEVOPSELLENCE_SECRETS: ${{ secrets.DEVOPSELLENCE_SECRETS }}
     steps:
       - uses: actions/checkout@v4
       - uses: devopsellence/deploy-action@v1
         with:
-          # Get your token at: https://www.devopsellence.com/setup/github-actions
           token: ${{ secrets.DEVOPSELLENCE_TOKEN }}
+          organization: default
           project: github-actions-demo
+          environment: production
